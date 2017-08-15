@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GRAVR API Demo Dinosaurs</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="GRAVR API Demo Dinosaurs">
+    <meta name="apple-mobile-web-app-capable" />
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.9.0/dist/aframe-extras.min.js"></script>
+    
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    
+    <!--build:js js/main.min.js -->
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-mixin id="check"
+            geometry="primitive:cylinder; radius:0.35; height:0.1"
+            material="color:#BCC6CD"
+        ></a-mixin>
+        <a-mixin id="grid"
+          geometry="primitive:plane; width: 75; height: 75"
+          rotation="-90 0 0"
+          material="src:assets/grid.png; repeat:75 75"
+        ></a-mixin>
+
+        <a-asset-item id="apatosaurus-obj" src="assets/apatosaurus01.obj"></a-asset-item>
+        <a-asset-item id="apatosaurus-mtl" src="assets/apatosaurus01.mtl"></a-asset-item>
+
+        <a-asset-item id="stegosaurus-obj" src="assets/Stegosaurus.obj"></a-asset-item>
+        <a-asset-item id="stegosaurus-mtl" src="assets/Stegosaurus.mtl"></a-asset-item>
+
+        <a-asset-item id="tyrannosaurusrex-obj" src="assets/TyrannosaurusRex.obj"></a-asset-item>
+        <a-asset-item id="tyrannosaurusrex-mtl" src="assets/TyrannosaurusRex.mtl"></a-asset-item>
+
+        <img id="mainThumbnail" src="assets/mainspace.jpg">
+      </a-assets>
+
+      <a-entity link="href: index.html; title: Main Space; image: #mainThumbnail; highlighted:true; highlightedColor:#928DAB;" position="0 1.6 4"></a-entity>
+
+      <a-entity obj-model="obj: #apatosaurus-obj; mtl: #apatosaurus-mtl" rotation="-90 100 0" position="-3 0 -13" scale="1 1 1"></a-entity>
+      <a-entity obj-model="obj: #stegosaurus-obj; mtl: #stegosaurus-mtl" rotation="0 70 0" position="-6 0 6" scale="0.34 0.34 0.34"></a-entity>
+      <a-entity obj-model="obj: #tyrannosaurusrex-obj; mtl: #tyrannosaurusrex-mtl" rotation="0 -80 0" position="11 0 -5" scale="0.34 0.34 0.34"></a-entity>
+
+      <a-entity camera
+                universal-controls="movementControls: checkpoint"
+                wasd-controls
+                checkpoint-controls="mode: animate">
+          <a-cursor></a-cursor>
+      </a-entity>
+
+      <a-entity gravr-avatar="color: #928DAB;
+                        obj:assets/basemesh.obj;
+                        offsetPos:0 0 0.15;
+                        safeZone:false;
+                        hash:b642b4217b34b1e8d3bd915fc65c4452;
+                        ">
+      </a-entity>
+
+      <!-- Grid -->
+      <a-entity mixin="grid"></a-entity>
+      <a-sky color="#BCC6CD"></a-sky>
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-entity checkpoint="" position="1 0 -20" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="-8 0 -10" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="1.7 0 -14" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="1 0 -8" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="-1 0 -2" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="-9 0 -3" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="5 0 -4" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="11 0 -14" mixin="check"></a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+

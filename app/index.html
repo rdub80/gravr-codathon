@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GRAVR API Demo</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="GRAVR API Demo">
+    <meta name="apple-mobile-web-app-capable" />
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.9.0/dist/aframe-extras.min.js"></script>
+    
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    
+    <!--build:js js/main.min.js -->
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-mixin id="check"
+            geometry="primitive:cylinder; radius:0.35; height:0.1"
+            material="color:#BCC6CD"
+        ></a-mixin>
+        <a-mixin id="grid"
+          geometry="primitive:plane; width: 75; height: 75"
+          rotation="-90 0 0"
+          material="src:assets/grid.png; repeat:75 75"
+        ></a-mixin>
+        <a-mixin id="cm"
+          geometry="primitive:box; width: 0.1; depth:0.005; height: 0.01"
+          material="color:#58546B"
+        ></a-mixin>
+        <a-mixin id="dm"
+          geometry="primitive:box; width: 0.1; depth:0.01; height: 0.1"
+          material="color:#8E9EAB"
+        ></a-mixin>
+        <a-mixin id="m"
+          geometry="primitive:box; width: 0.1; depth:0.01; height: 1"
+          material="color:#1F1C2C"
+        ></a-mixin>
+        <a-mixin id="scale"
+          geometry="primitive:box; width: 0.1; depth:0.05; height: 0.01"
+          material="color:#fff; opacity:1; shader: flat;">
+        </a-mixin>
+
+        <img id="horrorThumbnail" src="assets/classichorrorspace.jpg">
+        <img id="interfaceThumbnail" src="assets/interfacespace.jpg">
+        <img id="dinoThumbnail" src="assets/dinospace.jpg">
+      </a-assets>
+
+      <a-entity link="href: classichorror.html; title: Horror Classics Space; image: #horrorThumbnail; highlighted:true; highlightedColor:#928DAB;" position="-11 1 -1" rotation="0 70 0"></a-entity>
+
+      <a-entity link="href: interface.html; title: Interface Space; image: #interfaceThumbnail; highlighted:true; highlightedColor:#928DAB;" position="-6 1 -4" rotation="0 25 0"></a-entity>
+
+      <a-entity link="href: dino.html; title: Dinosaurs Space; image: #dinoThumbnail; highlighted:true; highlightedColor:#928DAB;" position="6 1 -4" rotation="0 -25 0"></a-entity>
+
+
+      <a-entity mixin="scale" position="0 0 -3">
+        <a-box mixin="m" position="-0.1 0.5 0"></a-box>
+        <a-box mixin="dm" position="0 0.05 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.005 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.025 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.045 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.065 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.085 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.105 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.125 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.145 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.165 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.185 0"></a-box>
+        <a-box mixin="dm" position="0 0.25 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.205 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.225 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.245 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.265 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.285 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.305 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.325 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.345 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.365 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.385 0"></a-box>
+        <a-box mixin="dm" position="0 0.45 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.405 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.425 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.445 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.465 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.485 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.505 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.525 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.545 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.565 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.585 0"></a-box>
+        <a-box mixin="dm" position="0 0.65 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.605 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.625 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.645 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.665 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.685 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.705 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.725 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.745 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.765 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.785 0"></a-box>
+        <a-box mixin="dm" position="0 0.85 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.805 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.825 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.845 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.865 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.885 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.905 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.925 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.945 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.965 0"></a-box>
+          <a-box mixin="cm" position="0.1 0.985 0"></a-box>
+        <a-box mixin="m" position="-0.1 1.5 0" color="#BCC6CD"></a-box>
+        <a-box mixin="dm" position="0 1.05 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.005 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.025 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.045 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.065 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.085 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.105 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.125 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.145 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.165 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.185 0"></a-box>
+        <a-box mixin="dm" position="0 1.25 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.205 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.225 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.245 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.265 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.285 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.305 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.325 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.345 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.365 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.385 0"></a-box>
+        <a-box mixin="dm" position="0 1.45 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.405 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.425 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.445 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.465 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.485 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.505 0" color="#A73868"></a-box>
+          <a-box mixin="cm" position="0.1 1.525 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.545 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.565 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.585 0" color="#DC2430"></a-box>
+        <a-box mixin="dm" position="0 1.65 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.605 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.625 0" color="#309AA0"></a-box>
+          <a-box mixin="cm" position="0.1 1.645 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.665 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.685 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.705 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.725 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.745 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.765 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.785 0"></a-box>
+        <a-box mixin="dm" position="0 1.85 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.805 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.825 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.845 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.865 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.885 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.905 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.925 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.945 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.965 0"></a-box>
+          <a-box mixin="cm" position="0.1 1.985 0"></a-box>
+        <a-box mixin="m" position="-0.1 2.5 0"></a-box>
+        <a-box mixin="dm" position="0 2.05 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.005 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.025 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.045 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.065 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.085 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.105 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.125 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.145 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.165 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.185 0"></a-box>
+        <a-box mixin="dm" position="0 2.25 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.205 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.225 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.245 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.265 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.285 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.305 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.325 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.345 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.365 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.385 0"></a-box>
+        <a-box mixin="dm" position="0 2.45 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.405 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.425 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.445 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.465 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.485 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.505 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.525 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.545 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.565 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.585 0"></a-box>
+        <a-box mixin="dm" position="0 2.65 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.605 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.625 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.645 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.665 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.685 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.705 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.725 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.745 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.765 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.785 0"></a-box>
+        <a-box mixin="dm" position="0 2.85 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.805 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.825 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.845 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.865 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.885 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.905 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.925 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.945 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.965 0"></a-box>
+          <a-box mixin="cm" position="0.1 2.985 0"></a-box>
+        <a-box mixin="m" position="-0.1 3.5 0" color="#BCC6CD"></a-box>
+        <a-box mixin="dm" position="0 3.05 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.005 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.025 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.045 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.065 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.085 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.105 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.125 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.145 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.165 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.185 0"></a-box>
+        <a-box mixin="dm" position="0 3.25 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.205 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.225 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.245 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.265 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.285 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.305 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.325 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.345 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.365 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.385 0"></a-box>
+        <a-box mixin="dm" position="0 3.45 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.405 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.425 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.445 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.465 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.485 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.505 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.525 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.545 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.565 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.585 0"></a-box>
+        <a-box mixin="dm" position="0 3.65 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.605 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.625 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.645 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.665 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.685 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.705 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.725 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.745 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.765 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.785 0"></a-box>
+        <a-box mixin="dm" position="0 3.85 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.805 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.825 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.845 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.865 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.885 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.905 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.925 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.945 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.965 0"></a-box>
+          <a-box mixin="cm" position="0.1 3.985 0"></a-box>
+        <a-box mixin="m" position="-0.1 4.5 0"></a-box>
+        <a-box mixin="dm" position="0 4.05 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.005 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.025 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.045 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.065 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.085 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.105 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.125 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.145 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.165 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.185 0"></a-box>
+        <a-box mixin="dm" position="0 4.25 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.205 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.225 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.245 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.265 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.285 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.305 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.325 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.345 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.365 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.385 0"></a-box>
+        <a-box mixin="dm" position="0 4.45 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.405 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.425 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.445 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.465 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.485 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.505 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.525 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.545 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.565 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.585 0"></a-box>
+        <a-box mixin="dm" position="0 4.65 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.605 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.625 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.645 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.665 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.685 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.705 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.725 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.745 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.765 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.785 0"></a-box>
+        <a-box mixin="dm" position="0 4.85 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.805 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.825 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.845 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.865 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.885 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.905 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.925 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.945 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.965 0"></a-box>
+          <a-box mixin="cm" position="0.1 4.985 0"></a-box>
+      </a-entity>
+        
+      <a-obj-model src="assets/basemesh.obj"
+                color="#DC2430"
+                scale="1 0.93 1"
+                position="1 0 -3">
+      </a-obj-model>
+      <a-entity text="font: mozillavr; align:left; value: Default VR userHeight 1.6 meters; color:#DC2430"
+                position="0.7 1.6 -3">
+      </a-entity>
+
+      <a-obj-model src="assets/basemesh.obj"
+                color="#309AA0"
+                scale="1 0.96 1"
+                position="-1.6 0 -3.1">
+      </a-obj-model>      
+      <a-entity text="font: mozillavr; align:right; value: Height of the average North American male is 1.755 meters (userHeight 1.63 meters); color:#309AA0"
+                position="-0.7 1.67 -3">
+      </a-entity>
+
+      <a-obj-model src="assets/basemesh.obj"
+                color="#A73868"
+                scale="1 0.9 1"
+                position="-1.2 0 -2.9">
+      </a-obj-model>
+      <a-entity text="font: mozillavr; align:right; value: Height of the average US female is 1.625 meters (userHeight 1.5 meters); color:#A73868"
+                position="-0.7 1.5 -3">
+      </a-entity>
+
+      <a-entity camera
+                universal-controls="movementControls: checkpoint"
+                wasd-controls
+                checkpoint-controls="mode: animate">
+          <a-cursor></a-cursor>
+      </a-entity>
+
+      <a-entity gravr-avatar="color: #928DAB;
+                        obj:assets/basemesh.obj;
+                        offsetPos:0 0 0.15;
+                        safeZone:false;
+                        hash:b642b4217b34b1e8d3bd915fc65c4452;
+                        ">
+      </a-entity>
+
+      <!-- Grid -->
+      <a-entity mixin="grid"></a-entity>
+      <a-sky color="#BCC6CD"></a-sky>
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-entity checkpoint="" position="1 0 -4" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="-1 0 -2" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="-4 0 0" mixin="check"></a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+

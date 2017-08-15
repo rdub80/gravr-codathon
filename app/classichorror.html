@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GRAVR API Demo Dinosaurs</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="GRAVR API Demo Dinosaurs">
+    <meta name="apple-mobile-web-app-capable" />
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.9.0/dist/aframe-extras.min.js"></script>
+    
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    
+    <!--build:js js/main.min.js -->
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-mixin id="check"
+            geometry="primitive:cylinder; radius:0.35; height:0.1"
+            material="color:#BCC6CD"
+        ></a-mixin>
+        <a-mixin id="grid"
+          geometry="primitive:plane; width: 75; height: 75"
+          rotation="-90 0 0"
+          material="src:assets/grid.png; repeat:75 75"
+        ></a-mixin>
+
+        <img id="frankenstein-bg" src="assets/frankenstein-bg.png">
+        <img id="frankenstein-title" src="assets/frankenstein-title.png">
+        <img id="frankenstein" src="assets/frankenstein.png">
+
+        <img id="lagoon-bg" src="assets/lagoon-bg.png">
+        <img id="lagoon-title" src="assets/lagoon-title.png">
+        <img id="lagoon" src="assets/lagoon.png">
+
+        <img id="nosferatu-bg" src="assets/nosferatu-bg.png">
+        <img id="nosferatu-title" src="assets/nosferatu-title.png">
+        <img id="nosferatu" src="assets/nosferatu.png">
+
+        <img id="wolfman-bg" src="assets/wolfman-bg.png">
+        <img id="wolfman-title" src="assets/wolfman-title.png">
+        <img id="wolfman" src="assets/wolfman.png">
+
+
+        <img id="mainThumbnail" src="assets/mainspace.jpg">
+      </a-assets>
+
+      <a-entity link="href: index.html; title: Main Space; image: #mainThumbnail; highlighted:true; highlightedColor:#928DAB;" position="0 1.6 4"></a-entity>
+
+    <a-entity
+              rotation="0 60 0"
+              position="-9 1.28 -2"
+    >
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#frankenstein-bg; shader:flat; transparent:true;"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#frankenstein; shader:flat; transparent:true;"
+                position="0 0 0.2"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:0.64; width:2.56;"
+                material="src:#frankenstein-title; shader:flat; transparent:true;"
+                position="0 1.3 0.3"
+      ></a-entity>
+    </a-entity>
+      
+    <a-entity
+              rotation="0 30 0"
+              position="-3.5 1.28 -5.5"
+    >
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#lagoon-bg; shader:flat; transparent:true;"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#lagoon; shader:flat; transparent:true;"
+                position="0 0 0.2"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:0.64; width:2.56;"
+                material="src:#lagoon-title; shader:flat; transparent:true;"
+                position="0 1.3 0.3"
+      ></a-entity>
+    </a-entity>
+
+    <a-entity
+              rotation="0 -30 0"
+              position="3.25 1.28 -6"
+    >
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#nosferatu-bg; shader:flat; transparent:true;"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#nosferatu; shader:flat; transparent:true;"
+                position="0 0 0.2"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:0.64; width:2.56;"
+                material="src:#nosferatu-title; shader:flat; transparent:true;"
+                position="0 1.3 0.3"
+      ></a-entity>
+    </a-entity>
+
+    <a-entity
+              rotation="0 -75  0"
+              position="5.5 1.28 -0.25"
+    >
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#wolfman-bg; shader:flat; transparent:true;"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:2.56; width:3.84;"
+                material="src:#wolfman; shader:flat; transparent:true;"
+                position="0 0 0.2"
+      ></a-entity>
+      <a-entity geometry="primitive:plane; height:0.64; width:2.56;"
+                material="src:#wolfman-title; shader:flat; transparent:true;"
+                position="0 1.3 0.3"
+      ></a-entity>
+    </a-entity>
+
+
+      <a-entity camera
+                universal-controls="movementControls: checkpoint"
+                wasd-controls
+                checkpoint-controls="mode: animate">
+          <a-cursor></a-cursor>
+      </a-entity>
+
+      <a-entity gravr-avatar="color: #928DAB;
+                        obj:assets/basemesh.obj;
+                        offsetPos:0 0 0.15;
+                        safeZone:false;
+                        hash:b642b4217b34b1e8d3bd915fc65c4452;
+                        ">
+      </a-entity>
+
+      <!-- Grid -->
+      <a-entity mixin="grid"></a-entity>
+      <a-sky color="#BCC6CD"></a-sky>
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-entity checkpoint="" position="-1 0 -1" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="2.5 0 -0.5" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="1.5 0 -5.5" mixin="check"></a-entity>
+        <a-entity checkpoint="" position="-3 0 -4.5" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="-8 0 -1.5" mixin="check""></a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+

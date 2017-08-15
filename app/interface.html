@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GRAVR API Demo Interface</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="GRAVR API Demo Interface">
+    <meta name="apple-mobile-web-app-capable" />
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.9.0/dist/aframe-extras.min.js"></script>
+    
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    
+    <!--build:js js/main.min.js -->
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-mixin id="check"
+            geometry="primitive:cylinder; radius:0.35; height:0.1"
+            material="color:#BCC6CD"
+        ></a-mixin>
+        <a-mixin id="grid"
+          geometry="primitive:plane; width: 75; height: 75"
+          rotation="-90 0 0"
+          material="src:assets/grid.png; repeat:75 75"
+        ></a-mixin>
+
+        <a-asset-item id="airplane_seats-obj" src="assets/airplane_seats.obj"></a-asset-item>
+        <a-asset-item id="airplane_seats-mtl" src="assets/airplane_seats.mtl"></a-asset-item>
+
+        <a-asset-item id="hospitalbed-obj" src="assets/hospitalbed.obj"></a-asset-item>
+        <a-asset-item id="hospitalbed-mtl" src="assets/hospitalbed.mtl"></a-asset-item>
+
+        <img id="mainThumbnail" src="assets/mainspace.jpg">
+      </a-assets>
+
+      <a-entity link="href: index.html; title: Main Space; image: #mainThumbnail; highlighted:true; highlightedColor:#928DAB;" position="-5 1 -4"></a-entity>
+
+      <!-- Airplane -->
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="1.175 0 -5.825" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="-1.175 0 -5.825" scale="0.5 0.5 0.5"></a-entity>
+
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="1.175 0 -4.75" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="-1.175 0 -4.75" scale="0.5 0.5 0.5"></a-entity>
+
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="1.175 0 -3.675" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity obj-model="obj: #airplane_seats-obj; mtl: #airplane_seats-mtl" rotation="0 0 0" position="-1.175 0 -3.675" scale="0.5 0.5 0.5"></a-entity>
+
+      <a-entity geometry="primitive:cylinder; height: 4; radius: 2.0; openEnded:true; segmentsRadial: 60;"
+                material="color:#EDF1F2; side:double"
+                rotation="90 0 0"
+                position="0 0.75 -5"
+      ></a-entity>
+      <a-entity geometry="primitive:cylinder; height: 4; radius: 2.1; openEnded:true; segmentsRadial: 60;"
+                material="color:#EDF1F2; side:double"
+                rotation="90 0 0"
+                position="0 0.75 -5"
+      ></a-entity>
+      <a-entity geometry="primitive:ring; radiusInner: 2.0; radiusOuter: 2.1;  segmentsTheta: 60;"
+                material="color:#EDF1F2; side:double"
+                rotation="0 0 0"
+                position="0 0.75 -3"
+      ></a-entity>
+      <a-entity geometry="primitive:ring; radiusInner: 2.0; radiusOuter: 2.1;  segmentsTheta: 60;"
+                material="color:#EDF1F2; side:double"
+                rotation="0 0 0"
+                position="0 0.75 -7"
+      ></a-entity>
+
+      <a-entity id="cam_airplane"
+                universal-controls="movementEnabled:false"
+                keyboard-controls="enabled: false"
+                camera="userHeight: 1.282; active:false"
+                position="-1.582 0 -5.761"
+                rotation="0 180 0">
+          <a-cursor></a-cursor>
+      </a-entity>
+      <a-entity switch-camera="activate:#cam_airplane"
+                position="-1.58 0 -5.85"
+                >
+                <a-obj-model  src="assets/basemesh_sit.obj"
+                              color="#DC2430"
+                              scale="1 1 1">
+                </a-obj-model>
+      </a-entity>
+
+      <!-- end Airplane -->
+
+      <!-- Hospital bed -->
+
+      <a-entity obj-model="obj: #hospitalbed-obj; mtl: #hospitalbed-mtl" rotation="0 -45 0" position="6 0 -2" scale="0.8 0.8 0.8"></a-entity>
+
+      <a-entity geometry="primitive: box; width:6; height:3; depth:0.1"
+                material="shader: flat; color: #EDF1F2"
+                position="7.3 1.5 -3.07"
+                rotation="0 -44 0"
+      ></a-entity>
+
+
+      <a-entity id="cam_bed"
+                universal-controls="movementEnabled:false"
+                keyboard-controls="enabled: false"
+                camera="userHeight: 0.925; active:false"
+                position="6.785 0 -2.425"
+                rotation="0 135 0">
+          <a-cursor></a-cursor>
+      </a-entity>
+      <a-entity switch-camera="activate:#cam_bed"
+                position="5.85 0.67 -1.5"
+                rotation="-90 -45 0"
+                >
+                <a-obj-model  src="assets/basemesh_lay.obj"
+                              color="#DC2430"
+                              scale="1 0.89 1">
+                </a-obj-model>
+      </a-entity>
+
+      <!-- end Hospital bed -->
+
+      <!-- main Cam -->
+
+      <a-entity id="cam"
+                camera="active:true"
+                universal-controls="movementControls: checkpoint"
+                wasd-controls
+                checkpoint-controls="mode: animate">
+          <a-cursor></a-cursor>
+      </a-entity>
+      <a-entity   gravr-avatar="color: #928DAB;
+                  obj:assets/basemesh.obj;
+                  offsetPos:0 0 0.15;
+                  safeZone:false;
+                  camID:#cam;
+                  hash:b642b4217b34b1e8d3bd915fc65c4452;"
+                  
+                  switch-camera="activate:#cam"
+                  >
+      </a-entity>        
+
+      <!-- Grid -->
+      <a-entity mixin="grid"></a-entity>
+      <a-sky color="#BCC6CD"></a-sky>
+
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-entity checkpoint="" position="-1 0 -2" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="4.2 0 -3.385" mixin="check""></a-entity>
+        <a-entity checkpoint="" position="-1 0 -6.4" mixin="check" ></a-entity>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+

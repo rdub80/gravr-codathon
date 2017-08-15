@@ -1,0 +1,18 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 03.08.2017 00:41:49
+
+newmtl TyrannosaurusRex_Material
+	Ns 26.5805
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka tyrannosaurusrex_color.jpg
+	map_Kd tyrannosaurusrex_color.jpg
+	map_Ks tyrannosaurusrex_specular.jpg
+	map_bump tyrannosaurusrex_normal.jpg
